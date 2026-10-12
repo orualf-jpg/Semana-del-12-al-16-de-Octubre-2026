@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Guía Completa de Microsoft PowerPoint - Semana del 12 al 16 de Octubre 2026</title>
+<style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        img, iframe, video, embed { max-width: 100%; height: auto; }
+        body {
+            font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+            background: linear-gradient(165deg, #0a0e1a 0%, #111827 25%, #1a2332 50%, #0f172a 75%, #080c14 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: #334155;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 24px; padding-top: 24px; }
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 28px;
+            padding: 48px 40px;
+            text-align: center;
+            margin-bottom: 32px;
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.28), 0 6px 16px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #4f46e5, #7c3aed, #ec4899, #f43f5e);
+            opacity: 0.85;
+        }
+        .school-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .school-info img {
+            width: 80px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .school-name { text-align: left; }
+        .school-name h3 { color: #2c5aa0; font-size: 1.3em; }
+        .school-name p { color: #666; font-size: 0.9em; }
+        h1 { color: #1e40af; font-size: 2.6em; margin: 20px 0 10px; font-weight: 700; letter-spacing: -0.5px; }
+        .subtitle { color: #666; font-size: 1.2em; }
+        .day-nav {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
+            padding: 10px 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 50px;
+            backdrop-filter: blur(40px) saturate(2.5);
+            -webkit-backdrop-filter: blur(40px) saturate(2.5);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.25), inset 0 -1px 0 rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s;
+            width: auto;
+            min-width: min-content;
+            max-width: 98vw;
+            position: fixed;
+            top: 16px;
+            left: 50%;
+            transform: translateX(-50%) translateY(0) scale(1);
+            z-index: 1000;
+            opacity: 1;
+            visibility: visible;
+        }
+        .day-nav.nav-hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transform: translateX(-50%) translateY(-80px) scale(0.85);
+        }
+        .day-nav.nav-visible {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateX(-50%) translateY(0) scale(1);
+        }
+        .day-nav a {
+            text-decoration: none;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-weight: 600;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            color: rgba(255, 255, 255, 0.95);
+            background: rgba(79, 70, 229, 0.35);
+            font-size: 0.78em;
+            letter-spacing: 0.3px;
+            box-shadow: 0 2px 6px rgba(79, 70, 229, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(6px) saturate(1.3);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .day-nav a:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 6px 16px rgba(79, 70, 229, 0.3);
+            background: rgba(67, 56, 202, 0.6);
+            color: white;
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        .day-nav a.active {
+            background: rgba(219, 39, 119, 0.55);
+            box-shadow: 0 4px 12px rgba(236, 72, 153, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        .day-nav a.today {
+            background: rgba(34, 197, 94, 0.6) !important;
+            box-shadow: 0 0 16px rgba(34, 197, 94, 0.35), 0 4px 12px rgba(34, 197, 94, 0.25);
+            border: 1px solid rgba(34, 197, 94, 0.4);
+            color: white !important;
+            animation: todayPulse 2.5s infinite;
+        }
+        @keyframes todayPulse {
+            0%, 100% { box-shadow: 0 0 12px rgba(34, 197, 94, 0.3), 0 2px 8px rgba(34, 197, 94, 0.2); }
+            50% { box-shadow: 0 0 24px rgba(34, 197, 94, 0.5), 0 4px 16px rgba(34, 197, 94, 0.4); }
+        }
+        .nav-theme-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            background: rgba(245, 158, 11, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 0.95em;
+            margin-left: 6px;
+            box-shadow: 0 2px 8px rgba(245, 158, 11, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            flex-shrink: 0;
+            backdrop-filter: blur(8px) saturate(1.3);
+        }
+        .nav-theme-toggle:hover {
+            transform: scale(1.12) rotate(15deg);
+            background: rgba(245, 158, 11, 0.6);
+            box-shadow: 0 4px 14px rgba(245, 158, 11, 0.3);
+        }
+        .day-section {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 28px;
+            padding: 44px;
+            margin-bottom: 32px;
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.18), 0 4px 16px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            position: relative;
+            overflow: hidden;
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .day-section::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #6366f1, #8b5cf6, #ec4899, #f43f5e);
+            opacity: 0.7;
+        }
+        .day-header {
+            background: linear-gradient(135deg, #3730a3 0%, #5b21b6 30%, #4f46e5 60%, #6366f1 100%);
+            color: white;
+            padding: 36px;
+            border-radius: 20px;
+            margin-bottom: 32px;
+            text-align: center;
+            box-shadow: 0 12px 40px rgba(79, 70, 229, 0.3), 0 4px 12px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .day-header h2 { font-size: 2em; margin-bottom: 10px; color: white; border: none; display: block; }
+        .day-header .day-theme { font-size: 1.3em; opacity: 0.9; margin-bottom: 10px; }
+        .day-header .day-objective {
+            margin-top: 15px;
+            font-size: 1em;
+            background: rgba(255,255,255,0.2);
+            padding: 12px;
+            border-radius: 10px;
+        }
+        .day-date { font-size: 1em; margin-top: 8px; opacity: 0.95; font-weight: bold; }
+        .notebook-area {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cd 100%);
+            border-left: 5px solid #ffc107;
+            border-radius: 0 20px 20px 0;
+            padding: 32px;
+            margin: 28px 0;
+            position: relative;
+            box-shadow: 0 4px 16px rgba(255, 193, 7, 0.1), 0 1px 4px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .notebook-area:hover {
+            transform: translateX(4px);
+            box-shadow: 0 6px 24px rgba(255, 193, 7, 0.15), 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+        .notebook-area::before {
+            content: "📓 COPIAR EN CUADERNO";
+            display: block;
+            background: #ffc107;
+            color: #333;
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 8px 16px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            width: fit-content;
+        }
+        .computer-area {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-left: 5px solid #2196F3;
+            border-radius: 0 20px 20px 0;
+            padding: 32px;
+            margin: 28px 0;
+            position: relative;
+            box-shadow: 0 4px 16px rgba(33, 150, 243, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .computer-area:hover {
+            transform: translateX(4px);
+            box-shadow: 0 6px 24px rgba(33, 150, 243, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+        .computer-area::before {
+            content: "💻 TRABAJAR EN COMPUTADORA";
+            display: block;
+            background: #2196F3;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 8px 16px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            width: fit-content;
+        }
+        .image-area {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-left: 5px solid #4CAF50;
+            border-radius: 0 20px 20px 0;
+            padding: 32px;
+            margin: 28px 0;
+            position: relative;
+            box-shadow: 0 4px 16px rgba(76, 175, 80, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .image-area:hover {
+            transform: translateX(4px);
+            box-shadow: 0 6px 24px rgba(76, 175, 80, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+        .image-area::before {
+            content: "🖼️ IMAGENES ILUSTRATIVAS";
+            display: block;
+            background: #4CAF50;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 8px 16px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            width: fit-content;
+        }
+        .definition-area {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            border-left: 5px solid #9C27B0;
+            border-radius: 0 20px 20px 0;
+            padding: 32px;
+            margin: 28px 0;
+            position: relative;
+            box-shadow: 0 4px 16px rgba(156, 39, 176, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .definition-area:hover {
+            transform: translateX(4px);
+            box-shadow: 0 6px 24px rgba(156, 39, 176, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+        .definition-area::before {
+            content: "📖 DEFINICIONES IMPORTANTES";
+            display: block;
+            background: #9C27B0;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 8px 16px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            width: fit-content;
+        }
+        .exercise-area {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-left: 5px solid #FF9800;
+            border-radius: 0 20px 20px 0;
+            padding: 32px;
+            margin: 28px 0;
+            position: relative;
+            box-shadow: 0 4px 16px rgba(255, 152, 0, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .exercise-area:hover {
+            transform: translateX(4px);
+            box-shadow: 0 6px 24px rgba(255, 152, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+        .exercise-area::before {
+            content: "🎯 EJERCICIOS PRACTICOS";
+            display: block;
+            background: #FF9800;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 8px 16px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            width: fit-content;
+        }
+        .tip-area {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+            border-left: 5px solid #E91E63;
+            border-radius: 0 20px 20px 0;
+            padding: 32px;
+            margin: 28px 0;
+            position: relative;
+            box-shadow: 0 4px 16px rgba(233, 30, 99, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .tip-area:hover {
+            transform: translateX(4px);
+            box-shadow: 0 6px 24px rgba(233, 30, 99, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+        .tip-area::before {
+            content: "💡 CONSEJOS IMPORTANTES";
+            display: block;
+            background: #E91E63;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 8px 16px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            width: fit-content;
+        }
+        h2 {
+            color: #1e3a8a;
+            font-size: 1.9em;
+            margin-bottom: 22px;
+            border-bottom: 2px solid #c7d2fe;
+            padding-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+        }
+        h3 { color: #1a5276; font-size: 1.4em; margin: 25px 0 15px; border-bottom: 2px solid #ddd; padding-bottom: 8px; }
+        h4 { color: #2c5aa0; font-size: 1.15em; margin: 20px 0 10px; }
+        .icon { font-size: 1.2em; }
+        .area-content p { margin-bottom: 12px; text-align: justify; }
+        .area-content ol, .area-content ul { margin-left: 25px; margin-bottom: 15px; }
+        .area-content li { margin-bottom: 8px; }
+        .illustration-img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            margin: 10px 0;
+            display: block;
+        }
+        .img-caption {
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+            margin-top: 5px;
+            font-style: italic;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            display: block;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        .comparison-table th {
+            background: linear-gradient(135deg, #3730a3 0%, #5b21b6 50%, #7c3aed 100%);
+            color: white;
+            padding: 18px;
+            text-align: left;
+            font-weight: 600;
+            letter-spacing: 0.4px;
+            font-size: 0.95em;
+        }
+        .comparison-table td {
+            padding: 18px;
+            border-bottom: 1px solid #f1f5f9;
+            color: #475569;
+            transition: background 0.2s ease;
+        }
+        .comparison-table tr:hover { background: #f1f5f9; }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .checklist { list-style: none; padding: 0; }
+        .checklist li {
+            padding: 10px 0;
+            padding-left: 35px;
+            position: relative;
+            font-size: 1.05em;
+        }
+        .checklist li::before {
+            content: "⬜";
+            position: absolute;
+            left: 0;
+            font-size: 1.3em;
+        }
+        .shortcut-key {
+            background: #2c5aa0;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-family: "Courier New", monospace;
+            font-size: 0.9em;
+        }
+        .homework-box {
+            background: linear-gradient(135deg, #be185d 0%, #db2777 30%, #ec4899 60%, #f43f5e 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 22px;
+            margin-top: 24px;
+            box-shadow: 0 12px 32px rgba(236, 72, 153, 0.28), 0 4px 12px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .homework-box h4 { color: white; margin-bottom: 10px; }
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #4f46e5, #7c3aed, #ec4899, #f43f5e);
+            z-index: 1000;
+            width: 0%;
+            transition: width 0.2s ease;
+            box-shadow: 0 0 16px rgba(99, 102, 241, 0.5);
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.3em;
+            cursor: pointer;
+            box-shadow: 0 8px 28px rgba(79, 70, 229, 0.4), 0 2px 8px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .back-to-top.visible { opacity: 1; visibility: visible; }
+        .back-to-top:hover {
+            transform: translateY(-5px) scale(1.08);
+            box-shadow: 0 12px 36px rgba(79, 70, 229, 0.5), 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        .search-container {
+            max-width: 600px;
+            margin: 24px auto;
+            position: relative;
+        }
+        .search-input {
+            width: 100%;
+            padding: 16px 56px 16px 26px;
+            border: 2px solid #c7d2fe;
+            border-radius: 32px;
+            font-size: 1em;
+            outline: none;
+            transition: all 0.4s ease;
+            background: white;
+            color: #334155;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        }
+        .search-input:focus {
+            border-color: #6366f1;
+            box-shadow: 0 0 24px rgba(99, 102, 241, 0.18), 0 6px 16px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        }
+        .search-input::placeholder { color: #94a3b8; }
+        .search-btn {
+            position: absolute;
+            right: 6px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .search-btn:hover {
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35);
+        }
+        .search-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            max-height: 320px;
+            overflow-y: auto;
+            z-index: 100;
+            display: none;
+            margin-top: 10px;
+            border: 1px solid #f1f5f9;
+        }
+        .search-results.active { display: block; }
+        .search-result-item {
+            padding: 14px 22px;
+            cursor: pointer;
+            border-bottom: 1px solid #f1f5f9;
+            transition: all 0.2s ease;
+        }
+        .search-result-item:hover { background: #f0f4ff; }
+        .search-result-item:last-child { border-bottom: none; }
+        .search-result-title { font-weight: 600; color: #4f46e5; font-size: 0.95em; }
+        .search-result-preview { color: #64748b; font-size: 0.85em; margin-top: 4px; line-height: 1.4; }
+        .area-toggle {
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            padding-right: 30px;
+        }
+        .area-toggle::after {
+            content: "▼";
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.8em;
+            transition: transform 0.3s;
+            color: inherit;
+        }
+        .area-toggle.collapsed::after { transform: translateY(-50%) rotate(-90deg); }
+        .area-content {
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, padding 0.4s ease;
+            max-height: 20000px;
+            opacity: 1;
+        }
+        .area-content.collapsed {
+            max-height: 0;
+            opacity: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            margin: 0;
+        }
+        footer {
+            text-align: center;
+            padding: 40px 30px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.05em;
+        }
+        footer p { text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+        .teacher-info {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.3);
+        }
+        body.dark-mode { background: linear-gradient(160deg, #020617 0%, #0f172a 40%, #1e1b4b 100%); }
+        body.dark-mode header,
+        body.dark-mode .day-section {
+            background: rgba(15, 23, 42, 0.97);
+            color: #e2e8f0;
+            border-color: rgba(255, 255, 255, 0.08);
+        }
+        body.dark-mode h1 { color: #93c5fd; }
+        body.dark-mode h2 { color: #93c5fd; border-bottom-color: #4f46e5; }
+        body.dark-mode h3 { color: #a5b4fc; }
+        body.dark-mode h4 { color: #93c5fd; }
+        body.dark-mode .subtitle { color: #94a3b8; }
+        body.dark-mode .school-name h3 { color: #93c5fd; }
+        body.dark-mode .school-name p { color: #94a3b8; }
+        body.dark-mode .area-content p { color: #cbd5e1; }
+        body.dark-mode .area-content li { color: #cbd5e1; }
+        body.dark-mode .img-caption { color: #94a3b8; }
+        body.dark-mode .comparison-table { background: #1e293b; border-color: #334155; }
+        body.dark-mode .comparison-table td { border-bottom-color: #334155; color: #cbd5e1; }
+        body.dark-mode .comparison-table tr:hover { background: #1e293b; }
+        body.dark-mode .notebook-area,
+        body.dark-mode .computer-area,
+        body.dark-mode .image-area,
+        body.dark-mode .definition-area,
+        body.dark-mode .exercise-area,
+        body.dark-mode .tip-area {
+            filter: brightness(0.88) saturate(0.9);
+        }
+        body.dark-mode .search-input {
+            background: #1e293b;
+            color: #e2e8f0;
+            border-color: #334155;
+        }
+        body.dark-mode .search-results {
+            background: #1e293b;
+            border-color: #334155;
+        }
+        body.dark-mode .search-result-item { border-bottom-color: #334155; }
+        body.dark-mode .search-result-item:hover { background: #1e293b; }
+        body.dark-mode .search-result-title { color: #93c5fd; }
+        body.dark-mode .search-result-preview { color: #94a3b8; }
+        body.dark-mode .day-nav {
+            background: rgba(15, 23, 42, 0.08);
+            color: #e2e8f0;
+            border-color: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 -1px 0 rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(40px) saturate(2.5);
+            -webkit-backdrop-filter: blur(40px) saturate(2.5);
+        }
+        body.dark-mode .day-nav.nav-hidden {
+            background: transparent;
+            box-shadow: none;
+            border-color: transparent;
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+        }
+        body.dark-mode .day-nav a {
+            background: rgba(79, 70, 229, 0.25);
+            border-color: rgba(255, 255, 255, 0.08);
+            color: rgba(255, 255, 255, 0.9);
+        }
+        body.dark-mode .day-nav a:hover {
+            background: rgba(67, 56, 202, 0.5);
+            color: white;
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+        body.dark-mode .day-nav a.active {
+            background: rgba(219, 39, 119, 0.45);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+        body.dark-mode .day-nav a.today {
+            background: rgba(34, 197, 94, 0.55) !important;
+            box-shadow: 0 0 16px rgba(34, 197, 94, 0.3), 0 4px 12px rgba(34, 197, 94, 0.2);
+            border: 1px solid rgba(34, 197, 94, 0.35);
+        }
+        body.dark-mode .nav-theme-toggle {
+            background: rgba(99, 102, 241, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 2px 8px rgba(99, 102, 241, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+        body.dark-mode .nav-theme-toggle:hover {
+            background: rgba(99, 102, 241, 0.55);
+            box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+        }
+        .nav-clock {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 6px 14px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px) saturate(1.5);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+            cursor: default;
+            min-width: 120px;
+        }
+        .nav-clock:hover {
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        .nav-clock-main {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85em;
+            font-weight: 700;
+            font-family: "Courier New", monospace;
+            letter-spacing: 0.5px;
+        }
+        .nav-clock-icon { font-size: 0.9em; }
+        .nav-clock-time { font-variant-numeric: tabular-nums; }
+        .nav-clock-date {
+            font-size: 0.65em;
+            font-weight: 500;
+            opacity: 0.85;
+            margin-top: 2px;
+            letter-spacing: 0.3px;
+            text-align: center;
+        }
+        body.dark-mode .nav-clock {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.12);
+            color: rgba(255, 255, 255, 0.9);
+        }
+        @media (max-width: 768px) {
+            .container { padding: 16px; padding-top: 16px; }
+            h1 { font-size: 1.8em; }
+            .day-section { padding: 20px; }
+            .day-header h2 { font-size: 1.5em; }
+            .notebook-area, .computer-area, .image-area, .definition-area, .exercise-area, .tip-area { padding: 20px; }
+            .day-nav {
+                gap: 6px;
+                padding: 8px 14px;
+                max-width: 96vw;
+                flex-wrap: wrap;
+                justify-content: center;
+                border-radius: 24px;
+            }
+            .day-nav a { padding: 6px 9px; font-size: 0.72em; flex-shrink: 0; }
+            .nav-theme-toggle { width: 32px; height: 32px; font-size: 0.9em; margin-left: 4px; flex-shrink: 0; }
+            .nav-clock { padding: 5px 8px; min-width: 90px; }
+            .nav-clock-main { font-size: 0.72em; }
+            .nav-clock-date { font-size: 0.6em; }
+        }
+        @media (max-width: 480px) {
+            .container { padding: 12px; padding-top: 12px; }
+            h1 { font-size: 1.5em; }
+            .day-section { padding: 16px; }
+            .day-header { padding: 20px; }
+            .day-header h2 { font-size: 1.3em; }
+            .notebook-area, .computer-area, .image-area, .definition-area, .exercise-area, .tip-area { padding: 16px; }
+            .day-nav {
+                gap: 5px;
+                padding: 8px 10px;
+                max-width: 95vw;
+                flex-wrap: wrap;
+                justify-content: center;
+                border-radius: 20px;
+            }
+            .day-nav a { padding: 5px 8px; font-size: 0.68em; border-radius: 16px; flex-shrink: 0; }
+            .nav-clock { padding: 4px 6px; min-width: 80px; }
+            .nav-clock-main { font-size: 0.68em; }
+            .nav-clock-date { font-size: 0.55em; }
+            .nav-theme-toggle { width: 28px; height: 28px; font-size: 0.8em; flex-shrink: 0; }
+            header { padding: 24px 16px; }
+            .school-info { gap: 12px; }
+            .school-info img { width: 60px; }
+            .school-name h3 { font-size: 1em; }
+            .school-name p { font-size: 0.8em; }
+        }
+        @media print {
+            .day-nav, .back-to-top, .scroll-progress { display: none !important; }
+            .day-section { opacity: 1 !important; transform: none !important; }
+            body { background: white !important; }
+            .day-section, header { box-shadow: none !important; background: white !important; }
+        }
+        .day-section.locked {
+            position: relative;
+        }
+        .day-section.locked .area-content,
+        .day-section.locked .day-header .day-theme,
+        .day-section.locked .day-header .day-objective,
+        .day-section.locked .homework-box {
+            display: none !important;
+        }
+        .day-section.locked .day-header {
+            margin-bottom: 0;
+            filter: grayscale(0.6) brightness(0.85);
+        }
+        .day-section.locked .day-header h2::after {
+            content: " 🔒";
+            opacity: 0.7;
+        }
+        .lock-overlay {
+            display: none;
+        }
+        .day-section.locked .lock-overlay {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e1b4b 100%);
+            border-radius: 20px;
+            margin-top: 24px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+        .day-section.locked .lock-overlay::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+            animation: lockPulse 3s ease-in-out infinite;
+        }
+        @keyframes lockPulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        .lock-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+            z-index: 1;
+            animation: lockBounce 2s ease-in-out infinite;
+        }
+        @keyframes lockBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .lock-title {
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            z-index: 1;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .lock-subtitle {
+            font-size: 1em;
+            opacity: 0.85;
+            margin-bottom: 8px;
+            z-index: 1;
+        }
+        .lock-date {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #fbbf24;
+            margin-bottom: 25px;
+            z-index: 1;
+        }
+        .lock-password-box {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            z-index: 1;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .lock-input {
+            padding: 12px 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1em;
+            width: 220px;
+            outline: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        .lock-input::placeholder { color: rgba(255, 255, 255, 0.5); }
+        .lock-input:focus {
+            border-color: #6366f1;
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        .lock-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+        }
+        .lock-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.5);
+        }
+        .lock-hint {
+            margin-top: 15px;
+            font-size: 0.85em;
+            opacity: 0.7;
+            z-index: 1;
+        }
+        .lock-error {
+            color: #fca5a5;
+            font-size: 0.9em;
+            margin-top: 10px;
+            z-index: 1;
+            min-height: 20px;
+        }
+        .lock-success {
+            color: #86efac;
+            font-size: 0.9em;
+            margin-top: 10px;
+            z-index: 1;
+        }
+        .unlock-animation {
+            animation: unlockFade 0.8s ease forwards;
+        }
+        @keyframes unlockFade {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.95); }
+            100% { opacity: 0; transform: scale(0.9); height: 0; padding: 0; margin: 0; overflow: hidden; }
+        }
+        body.dark-mode .day-section.locked .lock-overlay {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+        }
+    </style>
+<base target="_blank"/>
+</head>
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="container">
+<header>
+<div class="school-info">
+<img alt="Logo Escuela Nacional de Ciencias Comerciales Solola" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjlGRYMf0doBtSJA2ePvivB6ncvsCEvAxhMV9ES8FFNR5FvgD1XWCkbhOl3atJHGDuXAVGXNKIZmnQPUVV1Q5MB2G93qQjAvEFwPluRvy44S1_gqNfWi_gVjg-YN2yN_VXaI_AT8ld-lpapr8a4qMd1tbH63mZbWBJSs1bVIvOIdjhb/s220/logo.jpg"/>
+<div class="school-name">
+<h3>Escuela Nacional de Ciencias Comerciales Solola</h3>
+<p>Formando lideres para el desarrollo de Guatemala</p>
+</div>
+</div>
+<div style="font-size: 4em;">📽️</div>
+<h1>Guia Completa de Microsoft PowerPoint</h1>
+<p class="subtitle">5 Días de Aprendizaje: Lunes 12 al Viernes 16 de Octubre 2026</p>
+<p style="margin-top: 15px; color: #888;">Material organizado para mejor aprendizaje</p>
+<p style="margin-top: 10px; color: #2c5aa0; font-weight: bold; font-size: 1.1em;">📅 Semana del 12 al 16 de Octubre 2026</p>
+<div class="search-container">
+<input autocomplete="off" class="search-input" id="searchInput" placeholder="🔍 Buscar en la guía... (ej: animaciones, video, audio, narración, grabación)" type="text"/>
+<button class="search-btn" id="searchBtn">🔎</button>
+<div class="search-results" id="searchResults"></div>
+</div>
+</header>
+<div class="day-nav" id="dayNav">
+<a data-date="2026-10-12" data-day="1" href="#lunes">📘 Lunes 12</a>
+<a data-date="2026-10-13" data-day="2" href="#martes">📗 Martes 13</a>
+<a data-date="2026-10-14" data-day="3" href="#miercoles">📙 Miércoles 14</a>
+<a data-date="2026-10-15" data-day="4" href="#jueves">📕 Jueves 15</a>
+<a data-date="2026-10-16" data-day="5" href="#viernes">📓 Viernes 16</a>
+<div class="nav-clock" id="navClock" title="Hora y fecha actual">
+<div class="nav-clock-main">
+<span class="nav-clock-icon">🕐</span>
+<span class="nav-clock-time" id="clockTime">--:--:--</span>
+</div>
+<div class="nav-clock-date" id="clockDate">---</div>
+</div>
+<button class="nav-theme-toggle" id="themeToggle" title="Cambiar tema">🌙</button>
+</div>
+<section class="day-section locked" data-password="ANIM12" data-unlock-date="2026-10-12" id="lunes"><div class="day-header"><h2>Lunes 12 de octubre - Aplicación de animaciones a textos e imágenes</h2><div class="day-theme">Las animaciones son efectos visuales que controlan cómo aparece, se destaca, se mueve o desaparece un objeto dentro de una diapositiva. Sirven para explicar ideas paso a paso, dirigir la atención y evitar mostrar demasiada información al mismo tiempo.</div><div class="day-objective"><strong>Objetivo del tema:</strong> Aplicar animaciones a textos e imágenes, controlar su orden y tiempo, y distinguirlas de las transiciones.</div></div><div class="lock-overlay" id="lock-lunes">
+<div class="lock-icon">🔒</div>
+<div class="lock-title">Contenido Bloqueado</div>
+<div class="lock-subtitle">Este tema se desbloqueara automaticamente el:</div>
+<div class="lock-date">📅 Lunes 12 de octubre</div>
+<div class="lock-password-box">
+<input autocomplete="off" class="lock-input" id="input-lunes" placeholder="🔑 Contrasena del dia..." type="password"/>
+<button class="lock-btn" onclick="unlockDay('lunes')">Desbloquear</button>
+</div>
+<div class="lock-error" id="error-lunes"></div>
+<div class="lock-hint">💡 Pide la contrasena a tu catedratico para acceder antes de tiempo</div>
+</div><div class="definition-area"><div class="area-content"><h3>Conceptos fundamentales: Aplicación de animaciones a textos e imágenes</h3><p>Las animaciones son efectos visuales que controlan cómo aparece, se destaca, se mueve o desaparece un objeto dentro de una diapositiva. Sirven para explicar ideas paso a paso, dirigir la atención y evitar mostrar demasiada información al mismo tiempo.</p><h4>Vocabulario importante</h4><table class="comparison-table"><thead><tr><th>Concepto</th><th>Definición</th></tr></thead><tbody><tr><td><strong>Animación</strong></td><td>Efecto aplicado a un objeto de una diapositiva.</td></tr><tr><td><strong>Transición</strong></td><td>Efecto que se produce al pasar de una diapositiva a otra.</td></tr><tr><td><strong>Entrada</strong></td><td>Hace aparecer un objeto, por ejemplo con Aparecer o Desvanecer.</td></tr><tr><td><strong>Énfasis</strong></td><td>Destaca un objeto que ya está visible.</td></tr><tr><td><strong>Salida</strong></td><td>Hace desaparecer un objeto.</td></tr><tr><td><strong>Trayectoria de movimiento</strong></td><td>Desplaza un objeto siguiendo una ruta.</td></tr><tr><td><strong>Panel de animación</strong></td><td>Permite ordenar, revisar y ajustar los efectos.</td></tr></tbody></table><h4>Lo que debes comprender</h4><ul><li>Una diapositiva puede tener varios objetos animados y cada uno puede tener más de un efecto.</li><li>En Inicio se encuentran herramientas de formato; los efectos se configuran principalmente en la pestaña Animaciones.</li><li>Inicio: Al hacer clic, Con la anterior o Después de la anterior. Duración controla cuánto tarda el efecto y Retraso cuánto espera antes de comenzar.</li><li>El orden de los efectos se modifica en el Panel de animación; la Vista previa permite comprobar el resultado.</li></ul></div></div><div class="notebook-area"><div class="area-content"><h3>Copiar en el cuaderno — Tema 1</h3><h4>Resumen</h4><p>Las animaciones son efectos visuales que controlan cómo aparece, se destaca, se mueve o desaparece un objeto dentro de una diapositiva. Sirven para explicar ideas paso a paso, dirigir la atención y evitar mostrar demasiada información al mismo tiempo.</p><h4>Ideas principales</h4><ol><li>Una diapositiva puede tener varios objetos animados y cada uno puede tener más de un efecto.</li><li>En Inicio se encuentran herramientas de formato; los efectos se configuran principalmente en la pestaña Animaciones.</li><li>Inicio: Al hacer clic, Con la anterior o Después de la anterior. Duración controla cuánto tarda el efecto y Retraso cuánto espera antes de comenzar.</li><li>El orden de los efectos se modifica en el Panel de animación; la Vista previa permite comprobar el resultado.</li></ol><h4>Ejemplo de aplicación</h4><p>En una diapositiva sobre reciclaje, primero aparece la pregunta «¿Por qué reciclar?», después surgen tres respuestas una por una y, al final, entra una fotografía ilustrativa.</p></div></div><div class="computer-area"><div class="area-content"><h3>Práctica guiada paso a paso — Tema 1</h3><ol><li>Crea una presentación titulada «Cuidemos el lago de Atitlán» con cuatro diapositivas.</li><li>Escribe un título y tres ideas breves; inserta dos imágenes relacionadas con el tema.</li><li>Selecciona el título, abre Animaciones y aplica Desvanecer.</li><li>Selecciona una imagen y elige Agregar animación para aplicar un efecto de entrada.</li><li>Abre Panel de animación y coloca primero el título, luego el texto y finalmente la imagen.</li><li>Configura el título Al hacer clic, el texto Después de la anterior y la imagen Con la anterior.</li><li>Ajusta Duración y Retraso para lograr una secuencia clara.</li><li>Ejecuta la presentación con F5, observa los efectos y guarda el archivo.</li></ol><p><strong>Comprobación:</strong> reproduce el trabajo desde el inicio y verifica que cumple el objetivo antes de entregarlo.</p></div></div><div class="image-area"><div class="area-content"><h3>Guía visual de la interfaz — Tema 1</h3><p>Ubica en la cinta de opciones las herramientas descritas en la práctica. Observa el nombre de cada pestaña, selecciona el objeto correspondiente y comprueba cómo cambia el menú contextual.</p><p><strong>Actividad de observación:</strong> realiza una captura de pantalla de la herramienta principal de hoy, pégala en una diapositiva adicional y señala con una forma o flecha dónde se encuentra.</p></div></div><div class="tip-area"><div class="area-content"><h3>Consejos importantes — Tema 1</h3><ul><li>Evita animar cada palabra cuando no aporta claridad.</li><li>No confundas el efecto de transición de la diapositiva con la animación de sus objetos.</li><li>Utiliza pocos estilos y mantén un ritmo cómodo para la audiencia.</li></ul></div></div><div class="exercise-area"><div class="area-content"><h3>Ejercicios prácticos — Tema 1</h3><h4>Reto de clase</h4><p>Entrega una presentación de cuatro diapositivas con seis objetos animados como mínimo, tres tipos de efectos y un orden de reproducción intencional.</p><h4>Preguntas de repaso</h4><ol><li>¿Cuál es la diferencia entre animación y transición?</li><li>¿Para qué sirve el Panel de animación?</li><li>¿Qué cambia entre Con la anterior y Después de la anterior?</li></ol><h4>Lista de verificación</h4><ul class="checklist"><li>Completé los pasos de la práctica.</li><li>Probé la presentación en modo reproducción.</li><li>Guardé el archivo con un nombre reconocible.</li></ul></div></div><div class="homework-box"><h4>Actividad de entrega — Tema 1</h4><p>Entrega una presentación de cuatro diapositivas con seis objetos animados como mínimo, tres tipos de efectos y un orden de reproducción intencional.</p></div></section>
+<section class="day-section locked" data-password="VIDE13" data-unlock-date="2026-10-13" id="martes"><div class="day-header"><h2>Martes 13 de octubre - Inserción y edición de videos</h2><div class="day-theme">Un video puede mostrar procesos, experimentos, testimonios o demostraciones que serían difíciles de explicar solo con texto. PowerPoint permite insertar archivos de video y, según la versión, videos en línea, además de configurar varias opciones de reproducción.</div><div class="day-objective"><strong>Objetivo del tema:</strong> Insertar videos, recortarlos y configurar su reproducción dentro de una presentación.</div></div><div class="lock-overlay" id="lock-martes">
+<div class="lock-icon">🔒</div>
+<div class="lock-title">Contenido Bloqueado</div>
+<div class="lock-subtitle">Este tema se desbloqueara automaticamente el:</div>
+<div class="lock-date">📅 Martes 13 de octubre</div>
+<div class="lock-password-box">
+<input autocomplete="off" class="lock-input" id="input-martes" placeholder="🔑 Contrasena del dia..." type="password"/>
+<button class="lock-btn" onclick="unlockDay('martes')">Desbloquear</button>
+</div>
+<div class="lock-error" id="error-martes"></div>
+<div class="lock-hint">💡 Pide la contrasena a tu catedratico para acceder antes de tiempo</div>
+</div><div class="definition-area"><div class="area-content"><h3>Conceptos fundamentales: Inserción y edición de videos</h3><p>Un video puede mostrar procesos, experimentos, testimonios o demostraciones que serían difíciles de explicar solo con texto. PowerPoint permite insertar archivos de video y, según la versión, videos en línea, además de configurar varias opciones de reproducción.</p><h4>Vocabulario importante</h4><table class="comparison-table"><thead><tr><th>Concepto</th><th>Definición</th></tr></thead><tbody><tr><td><strong>Video incrustado</strong></td><td>Archivo de video incorporado dentro de la presentación.</td></tr><tr><td><strong>Video en línea</strong></td><td>Video insertado mediante un vínculo o servicio compatible; puede requerir conexión.</td></tr><tr><td><strong>Recortar video</strong></td><td>Definir el punto de inicio y final de un video compatible.</td></tr><tr><td><strong>Reproducción automática</strong></td><td>Iniciar el video sin un clic adicional cuando se muestra la diapositiva, según la configuración.</td></tr><tr><td><strong>Pantalla completa</strong></td><td>Reproducir el video ocupando toda la pantalla.</td></tr></tbody></table><h4>Lo que debes comprender</h4><ul><li>Para un video local, utiliza Insertar &gt; Video &gt; Este dispositivo (el nombre puede variar según la versión).</li><li>En la pestaña Reproducción pueden aparecer Recortar video, Volumen, Iniciar, Repetir hasta su interrupción y Reproducir a pantalla completa.</li><li>El formato MP4 con video H.264 y audio AAC suele ofrecer buena compatibilidad con PowerPoint moderno.</li><li>Los videos en línea pueden depender de la conexión a internet y de la compatibilidad del servicio.</li></ul></div></div><div class="notebook-area"><div class="area-content"><h3>Copiar en el cuaderno — Tema 2</h3><h4>Resumen</h4><p>Un video puede mostrar procesos, experimentos, testimonios o demostraciones que serían difíciles de explicar solo con texto. PowerPoint permite insertar archivos de video y, según la versión, videos en línea, además de configurar varias opciones de reproducción.</p><h4>Ideas principales</h4><ol><li>Para un video local, utiliza Insertar &gt; Video &gt; Este dispositivo (el nombre puede variar según la versión).</li><li>En la pestaña Reproducción pueden aparecer Recortar video, Volumen, Iniciar, Repetir hasta su interrupción y Reproducir a pantalla completa.</li><li>El formato MP4 con video H.264 y audio AAC suele ofrecer buena compatibilidad con PowerPoint moderno.</li><li>Los videos en línea pueden depender de la conexión a internet y de la compatibilidad del servicio.</li></ol><h4>Ejemplo de aplicación</h4><p>Una exposición sobre separación de residuos incluye un video de 30 segundos que muestra cómo clasificar plástico, papel y vidrio.</p></div></div><div class="computer-area"><div class="area-content"><h3>Práctica guiada paso a paso — Tema 2</h3><ol><li>Crea una presentación con el título «Acciones para proteger el ambiente».</li><li>Agrega una diapositiva llamada «Ejemplo en video».</li><li>Selecciona Insertar &gt; Video &gt; Este dispositivo y elige un archivo de video autorizado.</li><li>Ajusta el tamaño del video sin deformarlo y colócalo en el centro.</li><li>Selecciona el video y abre la pestaña Reproducción.</li><li>Si la opción está disponible, usa Recortar video para seleccionar un fragmento breve.</li><li>Prueba la opción Iniciar: Al hacer clic o Automáticamente, según el propósito.</li><li>Ajusta el volumen, reproduce en modo presentación y guarda los cambios.</li></ol><p><strong>Comprobación:</strong> reproduce el trabajo desde el inicio y verifica que cumple el objetivo antes de entregarlo.</p></div></div><div class="image-area"><div class="area-content"><h3>Guía visual de la interfaz — Tema 2</h3><p>Ubica en la cinta de opciones las herramientas descritas en la práctica. Observa el nombre de cada pestaña, selecciona el objeto correspondiente y comprueba cómo cambia el menú contextual.</p><p><strong>Actividad de observación:</strong> realiza una captura de pantalla de la herramienta principal de hoy, pégala en una diapositiva adicional y señala con una forma o flecha dónde se encuentra.</p></div></div><div class="tip-area"><div class="area-content"><h3>Consejos importantes — Tema 2</h3><ul><li>Utiliza videos cortos y directamente relacionados con el contenido.</li><li>Verifica que el archivo se reproduzca en la computadora de la exposición.</li><li>No insertes contenido protegido sin autorización y cita la fuente cuando corresponda.</li></ul></div></div><div class="exercise-area"><div class="area-content"><h3>Ejercicios prácticos — Tema 2</h3><h4>Reto de clase</h4><p>Entrega tres diapositivas que incluyan un video insertado, una configuración de inicio y una explicación escrita de por qué el video ayuda a comprender el tema.</p><h4>Preguntas de repaso</h4><ol><li>¿Qué diferencia existe entre un video local y uno en línea?</li><li>¿Para qué sirve Recortar video?</li><li>¿Qué debes comprobar antes de exponer?</li></ol><h4>Lista de verificación</h4><ul class="checklist"><li>Completé los pasos de la práctica.</li><li>Probé la presentación en modo reproducción.</li><li>Guardé el archivo con un nombre reconocible.</li></ul></div></div><div class="homework-box"><h4>Actividad de entrega — Tema 2</h4><p>Entrega tres diapositivas que incluyan un video insertado, una configuración de inicio y una explicación escrita de por qué el video ayuda a comprender el tema.</p></div></section>
+<section class="day-section locked" data-password="AUDI14" data-unlock-date="2026-10-14" id="miercoles"><div class="day-header"><h2>Miércoles 14 de octubre - Inserción de audios y narración</h2><div class="day-theme">El audio puede complementar una presentación mediante música, efectos de sonido o explicaciones habladas. La narración consiste en grabar la voz para explicar el contenido de una o varias diapositivas.</div><div class="day-objective"><strong>Objetivo del tema:</strong> Insertar archivos de audio y grabar una explicación oral breve en una diapositiva.</div></div><div class="lock-overlay" id="lock-miercoles">
+<div class="lock-icon">🔒</div>
+<div class="lock-title">Contenido Bloqueado</div>
+<div class="lock-subtitle">Este tema se desbloqueara automaticamente el:</div>
+<div class="lock-date">📅 Miércoles 14 de octubre</div>
+<div class="lock-password-box">
+<input autocomplete="off" class="lock-input" id="input-miercoles" placeholder="🔑 Contrasena del dia..." type="password"/>
+<button class="lock-btn" onclick="unlockDay('miercoles')">Desbloquear</button>
+</div>
+<div class="lock-error" id="error-miercoles"></div>
+<div class="lock-hint">💡 Pide la contrasena a tu catedratico para acceder antes de tiempo</div>
+</div><div class="definition-area"><div class="area-content"><h3>Conceptos fundamentales: Inserción de audios y narración</h3><p>El audio puede complementar una presentación mediante música, efectos de sonido o explicaciones habladas. La narración consiste en grabar la voz para explicar el contenido de una o varias diapositivas.</p><h4>Vocabulario importante</h4><table class="comparison-table"><thead><tr><th>Concepto</th><th>Definición</th></tr></thead><tbody><tr><td><strong>Archivo de audio</strong></td><td>Grabación digital que se puede insertar en una presentación.</td></tr><tr><td><strong>Narración</strong></td><td>Explicación hablada que acompaña el contenido.</td></tr><tr><td><strong>Micrófono</strong></td><td>Dispositivo que captura la voz.</td></tr><tr><td><strong>Icono de audio</strong></td><td>Objeto de la diapositiva que representa un sonido insertado.</td></tr><tr><td><strong>Reproducción</strong></td><td>Opciones para decidir cómo y cuándo se escucha el sonido.</td></tr></tbody></table><h4>Lo que debes comprender</h4><ul><li>Insertar &gt; Audio &gt; Audio en mi PC permite añadir un archivo existente (el nombre puede variar).</li><li>Insertar &gt; Audio &gt; Grabar audio permite registrar una voz corta en las versiones que incluyen esta opción.</li><li>Al seleccionar un audio aparecen opciones de reproducción como Inicio, Volumen, Ocultar durante presentación y Repetir, según la versión.</li><li>Conviene usar un ambiente silencioso, hablar despacio y comprobar que el micrófono funcione.</li></ul></div></div><div class="notebook-area"><div class="area-content"><h3>Copiar en el cuaderno — Tema 3</h3><h4>Resumen</h4><p>El audio puede complementar una presentación mediante música, efectos de sonido o explicaciones habladas. La narración consiste en grabar la voz para explicar el contenido de una o varias diapositivas.</p><h4>Ideas principales</h4><ol><li>Insertar &gt; Audio &gt; Audio en mi PC permite añadir un archivo existente (el nombre puede variar).</li><li>Insertar &gt; Audio &gt; Grabar audio permite registrar una voz corta en las versiones que incluyen esta opción.</li><li>Al seleccionar un audio aparecen opciones de reproducción como Inicio, Volumen, Ocultar durante presentación y Repetir, según la versión.</li><li>Conviene usar un ambiente silencioso, hablar despacio y comprobar que el micrófono funcione.</li></ol><h4>Ejemplo de aplicación</h4><p>La diapositiva muestra tres consejos para ahorrar agua y la voz explica una situación cotidiana donde se aplican.</p></div></div><div class="computer-area"><div class="area-content"><h3>Práctica guiada paso a paso — Tema 3</h3><ol><li>Crea una diapositiva titulada «El cuidado del agua».</li><li>Redacta tres ideas clave en frases cortas.</li><li>Abre Insertar &gt; Audio &gt; Grabar audio.</li><li>Escribe un nombre para la grabación y comprueba el micrófono.</li><li>Graba una narración de 20 a 40 segundos que explique las ideas sin leerlas palabra por palabra.</li><li>Detén la grabación, escúchala y repítela si hay ruido o poca claridad.</li><li>Configura la reproducción del audio para que comience al hacer clic o automáticamente.</li><li>Prueba la presentación con los parlantes o audífonos y guarda el archivo.</li></ol><p><strong>Comprobación:</strong> reproduce el trabajo desde el inicio y verifica que cumple el objetivo antes de entregarlo.</p></div></div><div class="image-area"><div class="area-content"><h3>Guía visual de la interfaz — Tema 3</h3><p>Ubica en la cinta de opciones las herramientas descritas en la práctica. Observa el nombre de cada pestaña, selecciona el objeto correspondiente y comprueba cómo cambia el menú contextual.</p><p><strong>Actividad de observación:</strong> realiza una captura de pantalla de la herramienta principal de hoy, pégala en una diapositiva adicional y señala con una forma o flecha dónde se encuentra.</p></div></div><div class="tip-area"><div class="area-content"><h3>Consejos importantes — Tema 3</h3><ul><li>Escribe un guion breve antes de grabar.</li><li>Mantén el micrófono a una distancia constante y evita música de fondo fuerte.</li><li>Escucha toda la grabación antes de entregar la presentación.</li></ul></div></div><div class="exercise-area"><div class="area-content"><h3>Ejercicios prácticos — Tema 3</h3><h4>Reto de clase</h4><p>Entrega dos diapositivas con una narración propia de 20 a 40 segundos, un título, tres ideas y una configuración de reproducción funcional.</p><h4>Preguntas de repaso</h4><ol><li>¿Qué es una narración?</li><li>¿Dónde se encuentra la herramienta para grabar audio?</li><li>¿Por qué es importante escuchar la grabación antes de entregar?</li></ol><h4>Lista de verificación</h4><ul class="checklist"><li>Completé los pasos de la práctica.</li><li>Probé la presentación en modo reproducción.</li><li>Guardé el archivo con un nombre reconocible.</li></ul></div></div><div class="homework-box"><h4>Actividad de entrega — Tema 3</h4><p>Entrega dos diapositivas con una narración propia de 20 a 40 segundos, un título, tres ideas y una configuración de reproducción funcional.</p></div></section>
+<section class="day-section locked" data-password="GRAB15" data-unlock-date="2026-10-15" id="jueves"><div class="day-header"><h2>Jueves 15 de octubre - Grabación de presentación</h2><div class="day-theme">Grabar una presentación permite conservar la explicación oral y, en versiones compatibles, los tiempos de avance, las anotaciones y el video de cámara. Es útil para exposiciones a distancia, clases y trabajos que se revisarán después.</div><div class="day-objective"><strong>Objetivo del tema:</strong> Grabar una exposición con voz y tiempos de diapositivas y revisar el resultado.</div></div><div class="lock-overlay" id="lock-jueves">
+<div class="lock-icon">🔒</div>
+<div class="lock-title">Contenido Bloqueado</div>
+<div class="lock-subtitle">Este tema se desbloqueara automaticamente el:</div>
+<div class="lock-date">📅 Jueves 15 de octubre</div>
+<div class="lock-password-box">
+<input autocomplete="off" class="lock-input" id="input-jueves" placeholder="🔑 Contrasena del dia..." type="password"/>
+<button class="lock-btn" onclick="unlockDay('jueves')">Desbloquear</button>
+</div>
+<div class="lock-error" id="error-jueves"></div>
+<div class="lock-hint">💡 Pide la contrasena a tu catedratico para acceder antes de tiempo</div>
+</div><div class="definition-area"><div class="area-content"><h3>Conceptos fundamentales: Grabación de presentación</h3><p>Grabar una presentación permite conservar la explicación oral y, en versiones compatibles, los tiempos de avance, las anotaciones y el video de cámara. Es útil para exposiciones a distancia, clases y trabajos que se revisarán después.</p><h4>Vocabulario importante</h4><table class="comparison-table"><thead><tr><th>Concepto</th><th>Definición</th></tr></thead><tbody><tr><td><strong>Grabar presentación</strong></td><td>Función que registra una exposición desde PowerPoint.</td></tr><tr><td><strong>Intervalos</strong></td><td>Tiempos de permanencia en cada diapositiva.</td></tr><tr><td><strong>Narración grabada</strong></td><td>Audio de voz registrado durante la exposición.</td></tr><tr><td><strong>Notas del orador</strong></td><td>Apuntes que ayudan a explicar sin saturar las diapositivas.</td></tr><tr><td><strong>Exportación</strong></td><td>Proceso para guardar la presentación en otro formato, como video.</td></tr></tbody></table><h4>Lo que debes comprender</h4><ul><li>Según la versión, la grabación se inicia desde Grabar o Presentación con diapositivas &gt; Grabar presentación.</li><li>Es posible registrar narraciones e intervalos y, si el equipo y la versión lo permiten, cámara y anotaciones.</li><li>El micrófono y la cámara deben tener los permisos adecuados del sistema.</li><li>La grabación se revisa reproduciendo la presentación; algunas versiones permiten exportarla a MP4 desde Archivo &gt; Exportar &gt; Crear un video.</li></ul></div></div><div class="notebook-area"><div class="area-content"><h3>Copiar en el cuaderno — Tema 4</h3><h4>Resumen</h4><p>Grabar una presentación permite conservar la explicación oral y, en versiones compatibles, los tiempos de avance, las anotaciones y el video de cámara. Es útil para exposiciones a distancia, clases y trabajos que se revisarán después.</p><h4>Ideas principales</h4><ol><li>Según la versión, la grabación se inicia desde Grabar o Presentación con diapositivas &gt; Grabar presentación.</li><li>Es posible registrar narraciones e intervalos y, si el equipo y la versión lo permiten, cámara y anotaciones.</li><li>El micrófono y la cámara deben tener los permisos adecuados del sistema.</li><li>La grabación se revisa reproduciendo la presentación; algunas versiones permiten exportarla a MP4 desde Archivo &gt; Exportar &gt; Crear un video.</li></ol><h4>Ejemplo de aplicación</h4><p>Un estudiante graba una explicación de dos minutos sobre las tres R: reducir, reutilizar y reciclar, usando imágenes y notas del orador.</p></div></div><div class="computer-area"><div class="area-content"><h3>Práctica guiada paso a paso — Tema 4</h3><ol><li>Prepara una presentación de cuatro diapositivas sobre un tema educativo.</li><li>Escribe notas del orador con una explicación breve para cada diapositiva.</li><li>Comprueba micrófono, cámara si la usarás y nivel de ruido del ambiente.</li><li>Abre Grabar o Presentación con diapositivas &gt; Grabar presentación.</li><li>Inicia la grabación, explica cada diapositiva con claridad y avanza cuando corresponda.</li><li>Detén la grabación al terminar la última diapositiva.</li><li>Reproduce el resultado y verifica voz, orden y duración.</li><li>Regraba la diapositiva que necesite corrección, si tu versión lo permite, y guarda el archivo.</li><li>Si está disponible, exporta una copia en video y comprueba que se reproduzca.</li></ol><p><strong>Comprobación:</strong> reproduce el trabajo desde el inicio y verifica que cumple el objetivo antes de entregarlo.</p></div></div><div class="image-area"><div class="area-content"><h3>Guía visual de la interfaz — Tema 4</h3><p>Ubica en la cinta de opciones las herramientas descritas en la práctica. Observa el nombre de cada pestaña, selecciona el objeto correspondiente y comprueba cómo cambia el menú contextual.</p><p><strong>Actividad de observación:</strong> realiza una captura de pantalla de la herramienta principal de hoy, pégala en una diapositiva adicional y señala con una forma o flecha dónde se encuentra.</p></div></div><div class="tip-area"><div class="area-content"><h3>Consejos importantes — Tema 4</h3><ul><li>Ensaya una vez antes de grabar la versión final.</li><li>Habla de forma natural, sin leer toda la diapositiva.</li><li>Comprueba el archivo exportado antes de compartirlo.</li></ul></div></div><div class="exercise-area"><div class="area-content"><h3>Ejercicios prácticos — Tema 4</h3><h4>Reto de clase</h4><p>Entrega una presentación de cuatro diapositivas con narración grabada e intervalos de avance; si el programa lo permite, incluye también una copia en MP4.</p><h4>Preguntas de repaso</h4><ol><li>¿Qué elementos puede registrar PowerPoint?</li><li>¿Para qué sirven las notas del orador?</li><li>¿Por qué conviene revisar la grabación completa?</li></ol><h4>Lista de verificación</h4><ul class="checklist"><li>Completé los pasos de la práctica.</li><li>Probé la presentación en modo reproducción.</li><li>Guardé el archivo con un nombre reconocible.</li></ul></div></div><div class="homework-box"><h4>Actividad de entrega — Tema 4</h4><p>Entrega una presentación de cuatro diapositivas con narración grabada e intervalos de avance; si el programa lo permite, incluye también una copia en MP4.</p></div></section>
+<section class="day-section locked" data-password="REPR16" data-unlock-date="2026-10-16" id="viernes"><div class="day-header"><h2>Viernes 16 de octubre - Configuración de narraciones y reproducción</h2><div class="day-theme">Después de grabar narraciones, es importante configurar cómo se escucharán y cómo avanzarán las diapositivas. Una buena configuración permite que la presentación funcione correctamente tanto en una exposición presencial como en una reproducción autónoma.</div><div class="day-objective"><strong>Objetivo del tema:</strong> Configurar el inicio, los tiempos y la reproducción de narraciones y comprobar una presentación final.</div></div><div class="lock-overlay" id="lock-viernes">
+<div class="lock-icon">🔒</div>
+<div class="lock-title">Contenido Bloqueado</div>
+<div class="lock-subtitle">Este tema se desbloqueara automaticamente el:</div>
+<div class="lock-date">📅 Viernes 16 de octubre</div>
+<div class="lock-password-box">
+<input autocomplete="off" class="lock-input" id="input-viernes" placeholder="🔑 Contrasena del dia..." type="password"/>
+<button class="lock-btn" onclick="unlockDay('viernes')">Desbloquear</button>
+</div>
+<div class="lock-error" id="error-viernes"></div>
+<div class="lock-hint">💡 Pide la contrasena a tu catedratico para acceder antes de tiempo</div>
+</div><div class="definition-area"><div class="area-content"><h3>Conceptos fundamentales: Configuración de narraciones y reproducción</h3><p>Después de grabar narraciones, es importante configurar cómo se escucharán y cómo avanzarán las diapositivas. Una buena configuración permite que la presentación funcione correctamente tanto en una exposición presencial como en una reproducción autónoma.</p><h4>Vocabulario importante</h4><table class="comparison-table"><thead><tr><th>Concepto</th><th>Definición</th></tr></thead><tbody><tr><td><strong>Narraciones</strong></td><td>Explicaciones de voz asociadas a una presentación.</td></tr><tr><td><strong>Intervalos</strong></td><td>Duración programada de las diapositivas.</td></tr><tr><td><strong>Avance manual</strong></td><td>Cambio de diapositiva mediante clic o teclado.</td></tr><tr><td><strong>Avance automático</strong></td><td>Cambio de diapositiva tras un tiempo establecido.</td></tr><tr><td><strong>Ensayar intervalos</strong></td><td>Herramienta para practicar y registrar tiempos de exposición.</td></tr></tbody></table><h4>Lo que debes comprender</h4><ul><li>Presentación con diapositivas &gt; Configurar presentación permite ajustar opciones generales de reproducción.</li><li>En Presentación con diapositivas pueden existir controles para usar narraciones e intervalos grabados.</li><li>En Transiciones &gt; Avanzar diapositiva se puede configurar Al hacer clic con el mouse o Después de un tiempo.</li><li>Para reproducir una presentación grabada automáticamente, los intervalos y las narraciones deben estar habilitados y guardados.</li><li>Los nombres exactos de los controles cambian según la versión de PowerPoint.</li></ul></div></div><div class="notebook-area"><div class="area-content"><h3>Copiar en el cuaderno — Tema 5</h3><h4>Resumen</h4><p>Después de grabar narraciones, es importante configurar cómo se escucharán y cómo avanzarán las diapositivas. Una buena configuración permite que la presentación funcione correctamente tanto en una exposición presencial como en una reproducción autónoma.</p><h4>Ideas principales</h4><ol><li>Presentación con diapositivas &gt; Configurar presentación permite ajustar opciones generales de reproducción.</li><li>En Presentación con diapositivas pueden existir controles para usar narraciones e intervalos grabados.</li><li>En Transiciones &gt; Avanzar diapositiva se puede configurar Al hacer clic con el mouse o Después de un tiempo.</li><li>Para reproducir una presentación grabada automáticamente, los intervalos y las narraciones deben estar habilitados y guardados.</li><li>Los nombres exactos de los controles cambian según la versión de PowerPoint.</li></ol><h4>Ejemplo de aplicación</h4><p>Una presentación con narración sobre hábitos saludables avanza automáticamente cada vez que termina la explicación correspondiente, sin que el estudiante tenga que pulsar una tecla.</p></div></div><div class="computer-area"><div class="area-content"><h3>Práctica guiada paso a paso — Tema 5</h3><ol><li>Abre la presentación grabada el jueves.</li><li>Comprueba que las narraciones estén presentes y se escuchen correctamente.</li><li>En Presentación con diapositivas, revisa las opciones para reproducir narraciones y usar intervalos.</li><li>Abre Configurar presentación y elige el modo adecuado para tu exposición.</li><li>En Transiciones, revisa si cada diapositiva avanza por clic o después de un tiempo.</li><li>Si necesitas ajustar los tiempos, usa Ensayar intervalos o vuelve a grabar los segmentos necesarios.</li><li>Inicia la presentación desde el principio y comprueba el avance completo.</li><li>Guarda una versión final con un nombre claro y, si corresponde, exporta a video.</li></ol><p><strong>Comprobación:</strong> reproduce el trabajo desde el inicio y verifica que cumple el objetivo antes de entregarlo.</p></div></div><div class="image-area"><div class="area-content"><h3>Guía visual de la interfaz — Tema 5</h3><p>Ubica en la cinta de opciones las herramientas descritas en la práctica. Observa el nombre de cada pestaña, selecciona el objeto correspondiente y comprueba cómo cambia el menú contextual.</p><p><strong>Actividad de observación:</strong> realiza una captura de pantalla de la herramienta principal de hoy, pégala en una diapositiva adicional y señala con una forma o flecha dónde se encuentra.</p></div></div><div class="tip-area"><div class="area-content"><h3>Consejos importantes — Tema 5</h3><ul><li>Evita intervalos demasiado cortos que corten la explicación.</li><li>Comprueba la reproducción en el equipo donde se presentará.</li><li>Conserva una copia editable .pptx además de cualquier video exportado.</li></ul></div></div><div class="exercise-area"><div class="area-content"><h3>Ejercicios prácticos — Tema 5</h3><h4>Reto de clase</h4><p>Entrega el proyecto final de la semana: cinco diapositivas con animaciones moderadas, al menos un video, narración grabada y reproducción configurada. Realiza una prueba completa.</p><h4>Preguntas de repaso</h4><ol><li>¿Qué diferencia hay entre avance manual y automático?</li><li>¿Qué sucede si se desactivan los intervalos grabados?</li><li>¿Por qué conviene conservar el archivo .pptx?</li></ol><h4>Lista de verificación</h4><ul class="checklist"><li>Completé los pasos de la práctica.</li><li>Probé la presentación en modo reproducción.</li><li>Guardé el archivo con un nombre reconocible.</li></ul></div></div><div class="homework-box"><h4>Actividad de entrega — Tema 5</h4><p>Entrega el proyecto final de la semana: cinco diapositivas con animaciones moderadas, al menos un video, narración grabada y reproducción configurada. Realiza una prueba completa.</p></div></section>
+<footer>
+<div style="font-size: 3em; margin-bottom: 10px;">📽️</div>
+<p><strong>Escuela Nacional de Ciencias Comerciales Solola</strong></p>
+<p>Formando lideres para el desarrollo de Guatemala</p>
+<div class="teacher-info">
+<p style="font-size: 1.2em; font-weight: bold;">👨‍🏫 Catedratico: Mauro Alfredo Marroquin Godines</p>
+<p>Guia de Microsoft PowerPoint - Curso Basico</p>
+<p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">Material elaborado para el aprendizaje de herramientas informaticas comerciales</p>
+</div>
+</footer>
+</div>
+<button class="back-to-top" id="backToTop" title="Volver arriba">⬆️</button>
+<script>
+        // ===== DATE-BASED UNLOCK SYSTEM =====
+        const unlockConfig = {
+            lunes: { date: "2026-10-12", password: "ANIM12" },
+            martes: { date: "2026-10-13", password: "VIDE13" },
+            miercoles: { date: "2026-10-14", password: "AUDI14" },
+            jueves: { date: "2026-10-15", password: "GRAB15" },
+            viernes: { date: "2026-10-16", password: "REPR16" }
+        };
+
+        function checkDateUnlock() {
+            const now = new Date();
+            const todayStr = now.getFullYear() + "-" + 
+                String(now.getMonth() + 1).padStart(2, "0") + "-" + 
+                String(now.getDate()).padStart(2, "0");
+
+            document.querySelectorAll('.day-section.locked').forEach(section => {
+                const dayId = section.id;
+                const unlockDate = section.getAttribute('data-unlock-date');
+                const password = section.getAttribute('data-password');
+
+                // Check if already manually unlocked (stored in session)
+                if (sessionStorage.getItem('unlocked_20261012_' + dayId) === 'true') {
+                    unlockSection(section, dayId, false);
+                    return;
+                }
+
+                // Check if date has passed or is today
+                if (todayStr >= unlockDate) {
+                    unlockSection(section, dayId, true);
+                }
+            });
+        }
+
+        function unlockSection(section, dayId, animate) {
+            section.classList.remove('locked');
+            const overlay = section.querySelector('.lock-overlay');
+            if (overlay) {
+                if (animate) {
+                    overlay.classList.add('unlock-animation');
+                    setTimeout(() => {
+                        overlay.style.display = 'none';
+                    }, 800);
+                } else {
+                    overlay.style.display = 'none';
+                }
+            }
+            // Show all content areas
+            section.querySelectorAll('.area-content, .day-header .day-theme, .day-header .day-objective, .homework-box').forEach(el => {
+                el.style.display = '';
+            });
+        }
+
+        function unlockDay(dayId) {
+            const input = document.getElementById('input-' + dayId);
+            const errorDiv = document.getElementById('error-' + dayId);
+            const enteredPassword = input.value.trim().toUpperCase();
+            const correctPassword = unlockConfig[dayId].password;
+
+            if (enteredPassword === correctPassword) {
+                errorDiv.textContent = "";
+                errorDiv.className = "lock-success";
+                errorDiv.textContent = "✅ ¡Desbloqueado correctamente!";
+                sessionStorage.setItem('unlocked_20261012_' + dayId, 'true');
+
+                const section = document.getElementById(dayId);
+                setTimeout(() => {
+                    unlockSection(section, dayId, true);
+                }, 500);
+            } else {
+                errorDiv.className = "lock-error";
+                errorDiv.textContent = "❌ Contrasena incorrecta. Intenta de nuevo.";
+                input.value = "";
+                input.focus();
+
+                // Shake animation on input
+                input.style.animation = "none";
+                input.offsetHeight; // trigger reflow
+                input.style.animation = "shake 0.5s ease";
+            }
+        }
+
+        // Add shake animation
+        const shakeStyle = document.createElement('style');
+        shakeStyle.textContent = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                20% { transform: translateX(-10px); }
+                40% { transform: translateX(10px); }
+                60% { transform: translateX(-5px); }
+                80% { transform: translateX(5px); }
+            }
+        `;
+        document.head.appendChild(shakeStyle);
+
+        // Check unlock on page load
+        checkDateUnlock();
+
+        // Allow Enter key to submit password
+        document.querySelectorAll('.lock-input').forEach(input => {
+            input.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    const dayId = this.id.replace('input-', '');
+                    unlockDay(dayId);
+                }
+            });
+        });
+
+        // ===== SCROLL PROGRESS =====
+        window.addEventListener("scroll", function() {
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (scrollTop / scrollHeight) * 100;
+            document.getElementById("scrollProgress").style.width = scrolled + "%";
+        });
+
+        // ===== BACK TO TOP =====
+        const backToTop = document.getElementById("backToTop");
+        window.addEventListener("scroll", function() {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add("visible");
+            } else {
+                backToTop.classList.remove("visible");
+            }
+        });
+        backToTop.addEventListener("click", function() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        // ===== NAV ACTIVE STATE & TODAY HIGHLIGHT =====
+        const navLinks = document.querySelectorAll(".day-nav a");
+        const sections = document.querySelectorAll(".day-section");
+        const dayNav = document.getElementById("dayNav");
+        let lastScrollY = window.scrollY;
+        let ticking = false;
+
+        // Highlight current day based on real date
+        function highlightToday() {
+            const today = new Date();
+            const todayStr = today.getFullYear() + "-" + 
+                String(today.getMonth() + 1).padStart(2, "0") + "-" + 
+                String(today.getDate()).padStart(2, "0");
+
+            navLinks.forEach(link => {
+                link.classList.remove("today");
+                if (link.getAttribute("data-date") === todayStr) {
+                    link.classList.add("today");
+                }
+            });
+        }
+        highlightToday();
+
+        // Retractable nav bar - hide on scroll up, show on scroll down
+        function handleScroll() {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                dayNav.classList.add("nav-hidden");
+                dayNav.classList.remove("nav-visible");
+            } else {
+                dayNav.classList.remove("nav-hidden");
+                dayNav.classList.add("nav-visible");
+            }
+
+            lastScrollY = currentScrollY;
+            ticking = false;
+        }
+
+        window.addEventListener("scroll", function() {
+            if (!ticking) {
+                window.requestAnimationFrame(handleScroll);
+                ticking = true;
+            }
+
+            let current = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute("id");
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === "#" + current) {
+                    link.classList.add("active");
+                }
+            });
+        });
+
+        // ===== SEARCH =====
+        const searchInput = document.getElementById("searchInput");
+        const searchResults = document.getElementById("searchResults");
+        const searchBtn = document.getElementById("searchBtn");
+        const allContent = [];
+        document.querySelectorAll(".day-section").forEach((section, idx) => {
+            const title = section.querySelector("h2") ? section.querySelector("h2").textContent : "";
+            const text = section.textContent;
+            allContent.push({ id: section.id, title: title, text: text });
+        });
+        function performSearch() {
+            const query = searchInput.value.toLowerCase().trim();
+            searchResults.innerHTML = "";
+            if (query.length < 2) {
+                searchResults.classList.remove("active");
+                return;
+            }
+            const results = [];
+            allContent.forEach(item => {
+                if (item.text.toLowerCase().includes(query)) {
+                    const index = item.text.toLowerCase().indexOf(query);
+                    const preview = item.text.substring(Math.max(0, index - 40), index + 80) + "...";
+                    results.push({ id: item.id, title: item.title, preview: preview });
+                }
+            });
+            if (results.length > 0) {
+                results.forEach(result => {
+                    const div = document.createElement("div");
+                    div.className = "search-result-item";
+                    div.innerHTML = `<div class="search-result-title">${result.title}</div><div class="search-result-preview">${result.preview}</div>`;
+                    div.addEventListener("click", function() {
+                        document.getElementById(result.id).scrollIntoView({ behavior: "smooth" });
+                        searchResults.classList.remove("active");
+                        searchInput.value = "";
+                    });
+                    searchResults.appendChild(div);
+                });
+                searchResults.classList.add("active");
+            } else {
+                const div = document.createElement("div");
+                div.className = "search-result-item";
+                div.innerHTML = `<div class="search-result-title">No se encontraron resultados</div>`;
+                searchResults.appendChild(div);
+                searchResults.classList.add("active");
+            }
+        }
+        searchInput.addEventListener("input", performSearch);
+        searchBtn.addEventListener("click", performSearch);
+        document.addEventListener("click", function(e) {
+            if (!e.target.closest(".search-container")) {
+                searchResults.classList.remove("active");
+            }
+        });
+
+        // ===== COLLAPSIBLE =====
+        document.querySelectorAll(".definition-area, .notebook-area, .computer-area, .image-area, .exercise-area, .tip-area").forEach(area => {
+            const content = area.querySelector(".area-content");
+            if (content) {
+                const toggle = document.createElement("div");
+                toggle.style.cssText = "cursor:pointer;position:absolute;top:10px;right:15px;font-size:1.2em;";
+                toggle.innerHTML = "▼";
+                area.appendChild(toggle);
+                toggle.addEventListener("click", function(e) {
+                    e.stopPropagation();
+                    content.classList.toggle("collapsed");
+                    toggle.innerHTML = content.classList.contains("collapsed") ? "▶" : "▼";
+                });
+            }
+        });
+
+        // ===== DARK MODE =====
+        const themeToggle = document.getElementById("themeToggle");
+        themeToggle.addEventListener("click", function() {
+            document.body.classList.toggle("dark-mode");
+            themeToggle.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+        });
+
+        // ===== NAV CLOCK =====
+        const diasSemana = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
+        const meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+        function updateNavClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, "0");
+            const minutes = String(now.getMinutes()).padStart(2, "0");
+            const seconds = String(now.getSeconds()).padStart(2, "0");
+            const diaSemana = diasSemana[now.getDay()];
+            const dia = now.getDate();
+            const mes = meses[now.getMonth()];
+            const anio = now.getFullYear();
+
+            document.getElementById("clockTime").textContent = hours + ":" + minutes + ":" + seconds;
+            document.getElementById("clockDate").textContent = diaSemana + ", " + dia + " de " + mes + " de " + anio;
+        }
+        updateNavClock();
+        setInterval(updateNavClock, 1000);
+
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute("href"));
+                if (target) {
+                    target.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
