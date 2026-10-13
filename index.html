@@ -728,6 +728,117 @@
             border-color: rgba(255, 255, 255, 0.12);
             color: rgba(255, 255, 255, 0.9);
         }
+
+        .video-area {
+            background: linear-gradient(135deg, #fdecea 0%, #fadbd8 100%);
+            border-left: 5px solid #e63946;
+            border-radius: 0 20px 20px 0;
+            padding: 32px;
+            margin: 28px 0;
+            position: relative;
+            box-shadow: 0 4px 16px rgba(230, 57, 70, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .video-area:hover {
+            transform: translateX(4px);
+            box-shadow: 0 6px 24px rgba(230, 57, 70, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+        .video-area::before {
+            content: "🎬 BIBLIOTECA DE VIDEOS";
+            display: block;
+            background: #e63946;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 8px 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            width: fit-content;
+        }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+        }
+        .video-card {
+            display: block;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+        }
+        .video-thumb { position: relative; }
+        .video-thumb img {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            display: block;
+        }
+        .video-play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 52px;
+            height: 52px;
+            background: rgba(230, 57, 70, 0.92);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3em;
+            padding-left: 5px;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+        }
+        .video-card:hover .video-play { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+        .video-info { padding: 14px 16px 16px; }
+        .video-info h4 {
+            color: #1e3a8a;
+            font-size: 1em;
+            margin: 0 0 6px;
+            line-height: 1.35;
+        }
+        .video-info p {
+            color: #64748b;
+            font-size: 0.82em;
+            margin: 0 0 10px;
+        }
+        .video-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #e63946 0%, #d62839 100%);
+            color: white;
+            font-size: 0.8em;
+            font-weight: 700;
+            padding: 7px 14px;
+            border-radius: 20px;
+            letter-spacing: 0.3px;
+        }
+        .video-note {
+            margin-top: 20px;
+            padding: 14px 18px;
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px dashed #e63946;
+            border-radius: 12px;
+            color: #7f1d1d;
+            font-size: 0.95em;
+        }
+        body.dark-mode .video-area { filter: brightness(0.88) saturate(0.9); }
+        body.dark-mode .video-card { background: #1e293b; }
+        body.dark-mode .video-info h4 { color: #93c5fd; }
+        body.dark-mode .video-info p { color: #94a3b8; }
+        body.dark-mode .video-note {
+            background: rgba(15, 23, 42, 0.6);
+            color: #fca5a5;
+        }
         @media (max-width: 768px) {
             .container { padding: 16px; padding-top: 16px; }
             h1 { font-size: 1.8em; }
@@ -962,6 +1073,7 @@
 <a data-date="2026-10-14" data-day="3" href="#miercoles">📙 Miércoles 14</a>
 <a data-date="2026-10-15" data-day="4" href="#jueves">📕 Jueves 15</a>
 <a data-date="2026-10-16" data-day="5" href="#viernes">📓 Viernes 16</a>
+<a href="#videos">🎬 Videos</a>
 <div class="nav-clock" id="navClock" title="Hora y fecha actual">
 <div class="nav-clock-main">
 <span class="nav-clock-icon">🕐</span>
@@ -1031,6 +1143,31 @@
 <div class="lock-error" id="error-viernes"></div>
 <div class="lock-hint">💡 Pide la contrasena a tu catedratico para acceder antes de tiempo</div>
 </div><div class="definition-area"><div class="area-content"><h3>Conceptos fundamentales: Configuración de narraciones y reproducción</h3><p>Después de grabar narraciones, es importante configurar cómo se escucharán y cómo avanzarán las diapositivas. Una buena configuración permite que la presentación funcione correctamente tanto en una exposición presencial como en una reproducción autónoma.</p><h4>Vocabulario importante</h4><table class="comparison-table"><thead><tr><th>Concepto</th><th>Definición</th></tr></thead><tbody><tr><td><strong>Narraciones</strong></td><td>Explicaciones de voz asociadas a una presentación.</td></tr><tr><td><strong>Intervalos</strong></td><td>Duración programada de las diapositivas.</td></tr><tr><td><strong>Avance manual</strong></td><td>Cambio de diapositiva mediante clic o teclado.</td></tr><tr><td><strong>Avance automático</strong></td><td>Cambio de diapositiva tras un tiempo establecido.</td></tr><tr><td><strong>Ensayar intervalos</strong></td><td>Herramienta para practicar y registrar tiempos de exposición.</td></tr></tbody></table><h4>Lo que debes comprender</h4><ul><li>Presentación con diapositivas &gt; Configurar presentación permite ajustar opciones generales de reproducción.</li><li>En Presentación con diapositivas pueden existir controles para usar narraciones e intervalos grabados.</li><li>En Transiciones &gt; Avanzar diapositiva se puede configurar Al hacer clic con el mouse o Después de un tiempo.</li><li>Para reproducir una presentación grabada automáticamente, los intervalos y las narraciones deben estar habilitados y guardados.</li><li>Los nombres exactos de los controles cambian según la versión de PowerPoint.</li></ul></div></div><div class="notebook-area"><div class="area-content"><h3>Copiar en el cuaderno — Tema 5</h3><h4>Resumen</h4><p>Después de grabar narraciones, es importante configurar cómo se escucharán y cómo avanzarán las diapositivas. Una buena configuración permite que la presentación funcione correctamente tanto en una exposición presencial como en una reproducción autónoma.</p><h4>Ideas principales</h4><ol><li>Presentación con diapositivas &gt; Configurar presentación permite ajustar opciones generales de reproducción.</li><li>En Presentación con diapositivas pueden existir controles para usar narraciones e intervalos grabados.</li><li>En Transiciones &gt; Avanzar diapositiva se puede configurar Al hacer clic con el mouse o Después de un tiempo.</li><li>Para reproducir una presentación grabada automáticamente, los intervalos y las narraciones deben estar habilitados y guardados.</li><li>Los nombres exactos de los controles cambian según la versión de PowerPoint.</li></ol><h4>Ejemplo de aplicación</h4><p>Una presentación con narración sobre hábitos saludables avanza automáticamente cada vez que termina la explicación correspondiente, sin que el estudiante tenga que pulsar una tecla.</p></div></div><div class="computer-area"><div class="area-content"><h3>Práctica guiada paso a paso — Tema 5</h3><ol><li>Abre la presentación grabada el jueves.</li><li>Comprueba que las narraciones estén presentes y se escuchen correctamente.</li><li>En Presentación con diapositivas, revisa las opciones para reproducir narraciones y usar intervalos.</li><li>Abre Configurar presentación y elige el modo adecuado para tu exposición.</li><li>En Transiciones, revisa si cada diapositiva avanza por clic o después de un tiempo.</li><li>Si necesitas ajustar los tiempos, usa Ensayar intervalos o vuelve a grabar los segmentos necesarios.</li><li>Inicia la presentación desde el principio y comprueba el avance completo.</li><li>Guarda una versión final con un nombre claro y, si corresponde, exporta a video.</li></ol><p><strong>Comprobación:</strong> reproduce el trabajo desde el inicio y verifica que cumple el objetivo antes de entregarlo.</p></div></div><div class="image-area"><div class="area-content"><h3>Guía visual de la interfaz — Tema 5</h3><p>Ubica en la cinta de opciones las herramientas descritas en la práctica. Observa el nombre de cada pestaña, selecciona el objeto correspondiente y comprueba cómo cambia el menú contextual.</p><p><strong>Actividad de observación:</strong> realiza una captura de pantalla de la herramienta principal de hoy, pégala en una diapositiva adicional y señala con una forma o flecha dónde se encuentra.</p></div></div><div class="tip-area"><div class="area-content"><h3>Consejos importantes — Tema 5</h3><ul><li>Evita intervalos demasiado cortos que corten la explicación.</li><li>Comprueba la reproducción en el equipo donde se presentará.</li><li>Conserva una copia editable .pptx además de cualquier video exportado.</li></ul></div></div><div class="exercise-area"><div class="area-content"><h3>Ejercicios prácticos — Tema 5</h3><h4>Reto de clase</h4><p>Entrega el proyecto final de la semana: cinco diapositivas con animaciones moderadas, al menos un video, narración grabada y reproducción configurada. Realiza una prueba completa.</p><h4>Preguntas de repaso</h4><ol><li>¿Qué diferencia hay entre avance manual y automático?</li><li>¿Qué sucede si se desactivan los intervalos grabados?</li><li>¿Por qué conviene conservar el archivo .pptx?</li></ol><h4>Lista de verificación</h4><ul class="checklist"><li>Completé los pasos de la práctica.</li><li>Probé la presentación en modo reproducción.</li><li>Guardé el archivo con un nombre reconocible.</li></ul></div></div><div class="homework-box"><h4>Actividad de entrega — Tema 5</h4><p>Entrega el proyecto final de la semana: cinco diapositivas con animaciones moderadas, al menos un video, narración grabada y reproducción configurada. Realiza una prueba completa.</p></div></section>
+<section class="day-section" id="videos">
+<div class="day-header"><h2>🎬 Biblioteca de Videos de la Semana</h2><div class="day-theme">Espacio exclusivo con los videos compartidos por el catedrático y los estudiantes. Esta sección se irá actualizando poco a poco conforme vayan llegando nuevos videos.</div></div>
+<div class="video-area"><div class="area-content">
+<div class="video-grid">
+
+<!-- VIDEO 1: compartido por el catedratico -->
+<a class="video-card" href="https://www.youtube.com/watch?v=aqaPudBGhqM">
+<div class="video-thumb"><img alt="Miniatura del video Take My Breath Away - DJ Sammy" src="https://img.youtube.com/vi/aqaPudBGhqM/hqdefault.jpg"/><span class="video-play">▶</span></div>
+<div class="video-info"><h4>Take My Breath Away – DJ Sammy</h4><p>🎵 Video compartido por el catedrático</p><span class="video-btn">▶ Ver en YouTube</span></div>
+</a>
+
+<!-- VIDEO 2: enviado por estudiante (titulo provisional) -->
+<a class="video-card" href="https://www.youtube.com/watch?v=S2RcoDj67sM">
+<div class="video-thumb"><img alt="Miniatura del video de estudiante" src="https://img.youtube.com/vi/S2RcoDj67sM/hqdefault.jpg"/><span class="video-play">▶</span></div>
+<div class="video-info"><h4>Video de estudiante #1</h4><p>👨‍🎓 Enviado por los estudiantes</p><span class="video-btn">▶ Ver en YouTube</span></div>
+</a>
+
+<!-- PARA AGREGAR MAS VIDEOS: copia un bloque <a class="video-card">...</a> completo,
+     cambia el ID del video en el enlace (despues de watch?v=) y en la imagen
+     (despues de /vi/), y actualiza el titulo. -->
+
+</div>
+<p class="video-note">📩 <strong>¿Quieres aparecer aquí?</strong> Envía tu video de YouTube al catedrático y lo agregaremos a esta biblioteca para que toda la clase pueda verlo.</p>
+</div></div>
+</section>
 <footer>
 <div style="font-size: 3em; margin-bottom: 10px;">📽️</div>
 <p><strong>Escuela Nacional de Ciencias Comerciales Solola</strong></p>
@@ -1287,7 +1424,7 @@
         });
 
         // ===== COLLAPSIBLE =====
-        document.querySelectorAll(".definition-area, .notebook-area, .computer-area, .image-area, .exercise-area, .tip-area").forEach(area => {
+        document.querySelectorAll(".definition-area, .notebook-area, .computer-area, .image-area, .exercise-area, .tip-area, .video-area").forEach(area => {
             const content = area.querySelector(".area-content");
             if (content) {
                 const toggle = document.createElement("div");
